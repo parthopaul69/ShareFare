@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({super.key});
@@ -12,19 +12,19 @@ class _SplashState extends State<Splash> {
   @override
   void initState() {
     super.initState();
-    _navigateToHome();
+    _navigateToLogin();
   }
 
-  void _navigateToHome() async {
+  void _navigateToLogin() async {
     // 1. Wait for 3 seconds on the splash screen
     await Future.delayed(const Duration(seconds: 3));
     if (!mounted) return;
 
-    // 2. Navigate to Home screen using standard MaterialPageRoute
+    // 2. Navigate to Login screen using standard MaterialPageRoute
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => const MyHomePage(title: 'ShareFare'),
+        builder: (context) => const LoginPage(),
       ),
     );
   }
@@ -40,7 +40,7 @@ class _SplashState extends State<Splash> {
 
             // App Logo
             Image.asset(
-              'assets/AppLogo.jpeg',
+              'assets/AppLogo.png',
               width: 200,
               height: 200,
               fit: BoxFit.contain,
