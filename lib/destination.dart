@@ -23,7 +23,7 @@ class _DestinationPageState extends State<DestinationPage> {
               const Text(
                 'ShareFare',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: Colors.amberAccent,
                   fontSize: 50,
                   fontWeight: FontWeight.bold,
                 ),
