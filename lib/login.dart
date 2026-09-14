@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'home.dart';
+import 'destination.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -27,7 +27,7 @@ class _LoginPageState extends State<LoginPage> {
                 'ShareFare',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 50,
+                  fontSize: 55,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -35,11 +35,12 @@ class _LoginPageState extends State<LoginPage> {
 
               // Motto
               const Text(
-                'Enhancing Connection,\nEnsuring Security',
+                'Login to Continue',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 25,
+                  fontSize: 26,fontWeight: FontWeight.bold
+                
                 ),
               ),
               const SizedBox(height: 40),
@@ -106,8 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            const MyHomePage(title: 'ShareFare'),
+                        builder: (context) => const DestinationPage(),
                       ),
                     );
                   },
@@ -128,7 +128,7 @@ class _LoginPageState extends State<LoginPage> {
 
               // Sign Up link
               const Text(
-                'New user? Sign up',
+                'Sign up',
                 style: TextStyle(color: Colors.grey, fontSize: 18),
               ),
             ],
