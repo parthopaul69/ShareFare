@@ -1,0 +1,9 @@
+# GitHub Linguist overrides
+# Treat platform-specific templates and wrapper boilerplate as vendored
+# so repository language statistics accurately reflect primary Flutter Dart code.
+android/** linguist-vendored
+ios/** linguist-vendored
+web/** linguist-vendored
+windows/** linguist-vendored
+linux/** linguist-vendored
+macos/** linguist-vendored
