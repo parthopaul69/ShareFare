@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home.dart';
+import 'availableShares.dart';
 
 class DestinationPage extends StatefulWidget {
   const DestinationPage({super.key});
@@ -26,7 +26,7 @@ class _DestinationPageState extends State<DestinationPage> {
                 'ShareFare',
                 style: TextStyle(
                   color: Colors.amberAccent,
-                  fontSize: 50,
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -37,17 +37,44 @@ class _DestinationPageState extends State<DestinationPage> {
                 'Where do you want to go?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 22,
+                  color: Color.fromARGB(255, 255, 254, 254),
+                  fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 40),
-
-              // Destination input deyar box er shb kichu              
+              //current location er box
               Container(
                 decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 35, 35, 35), // Dark gray background
+                  color: const Color.fromARGB(
+                    255,
+                    35,
+                    35,
+                    35,
+                  ), // Dark gray background
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your current location',
+                    hintStyle: TextStyle(color: Colors.grey),
+                    prefixIcon: Icon(Icons.location_on, color: Colors.grey),
+                    border: InputBorder.none, // Removes the default line
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // destination er box
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(
+                    255,
+                    35,
+                    35,
+                    35,
+                  ), // Dark gray background
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextField(
@@ -83,8 +110,7 @@ class _DestinationPageState extends State<DestinationPage> {
                     Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) =>
-                            const MyHomePage(title: 'ShareFare'),
+                        builder: (context) => const AvailableSharesPage(),
                       ),
                     );
                   },
