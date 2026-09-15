@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'home.dart';
 
 class DestinationPage extends StatefulWidget {
@@ -15,11 +16,12 @@ class _DestinationPageState extends State<DestinationPage> {
       backgroundColor: Colors.black,
       body: Center(
         child: Padding(
-          padding: const EdgeInsets.all(24.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              // App Title
+              SizedBox(height: 40),
+              // ShareFare lekha
               const Text(
                 'ShareFare',
                 style: TextStyle(
@@ -28,9 +30,9 @@ class _DestinationPageState extends State<DestinationPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
+              const SizedBox(height: 00),
 
-              // Question / Prompt text
+              //where do you want to go lekha
               const Text(
                 'Where do you want to go?',
                 textAlign: TextAlign.center,
@@ -42,18 +44,19 @@ class _DestinationPageState extends State<DestinationPage> {
               ),
               const SizedBox(height: 40),
 
-              // Destination Input Field
-              TextField(
-                style: const TextStyle(color: Colors.white),
-                decoration: InputDecoration(
-                  hintText: 'Enter your destination',
-                  hintStyle: const TextStyle(color: Colors.grey),
-                  prefixIcon: const Icon(Icons.location_on, color: Colors.grey),
-                  filled: true,
-                  fillColor: const Color(0xFF222222),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
+              // Destination input deyar box er shb kichu              
+              Container(
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 35, 35, 35), // Dark gray background
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: TextField(
+                  style: const TextStyle(color: Colors.white),
+                  decoration: const InputDecoration(
+                    hintText: 'Enter your destination',
+                    hintStyle: TextStyle(color: Colors.grey),
+                    prefixIcon: Icon(Icons.location_on, color: Colors.grey),
+                    border: InputBorder.none, // Removes the default line
                   ),
                 ),
               ),
@@ -62,15 +65,20 @@ class _DestinationPageState extends State<DestinationPage> {
               // Continue Button
               SizedBox(
                 width: double.infinity,
-                height: 48,
+                height: 50,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.grey[800],
-                    foregroundColor: Colors.white,
+                    backgroundColor: const Color.fromARGB(255, 72, 72, 72),
+                    foregroundColor: const Color.fromARGB(255, 246, 246, 246),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
+                  child: const Text(
+                    'Continue',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
@@ -80,10 +88,6 @@ class _DestinationPageState extends State<DestinationPage> {
                       ),
                     );
                   },
-                  child: const Text(
-                    'Continue',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
                 ),
               ),
             ],

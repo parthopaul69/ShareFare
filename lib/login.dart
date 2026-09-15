@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'destination.dart';
 
 class LoginPage extends StatefulWidget {
@@ -23,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // App Title
-              const Text(
+              Text(
                 'ShareFare',
                 style: TextStyle(
                   color: Colors.white,
@@ -31,35 +32,36 @@ class _LoginPageState extends State<LoginPage> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 10),
+              SizedBox(height: 10),
 
-              // Motto
+              // login to continue lekha
               const Text(
                 'Login to Continue',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   color: Colors.grey,
-                  fontSize: 26,fontWeight: FontWeight.bold
-                
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 40),
+              SizedBox(height: 40),
 
-              // 1. Email / Phone Field
+              // login korar jonno input deyar box
               TextField(
-                style: const TextStyle(color: Colors.white),
+                style: TextStyle(color: Colors.white),
                 decoration: InputDecoration(
                   hintText: 'Email or Phone Number',
                   hintStyle: const TextStyle(color: Colors.grey),
-                  prefixIcon: const Icon(Icons.person_outline, color: Colors.grey),
+                  prefixIcon: const Icon(
+                    Icons.person_outline,
+                    color: Colors.grey,
+                  ),
                   filled: true,
-                  fillColor: const Color(0xFF222222),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
+                  fillColor: const Color.fromARGB(255, 36, 36, 36),
+                  
                   ),
                 ),
-              ),
+              
               const SizedBox(height: 16),
 
               // 2. Password Field
@@ -69,10 +71,15 @@ class _LoginPageState extends State<LoginPage> {
                 decoration: InputDecoration(
                   hintText: 'Password',
                   hintStyle: const TextStyle(color: Colors.grey),
-                  prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
+                  prefixIcon: const Icon(
+                    Icons.lock_outline,
+                    color: Colors.grey,
+                  ),
                   suffixIcon: IconButton(
                     icon: Icon(
-                      _obscurePassword ? Icons.visibility_off : Icons.visibility,
+                      _obscurePassword
+                          ? Icons.visibility_off
+                          : Icons.visibility,
                       color: Colors.grey,
                     ),
                     onPressed: () {
@@ -82,11 +89,8 @@ class _LoginPageState extends State<LoginPage> {
                     },
                   ),
                   filled: true,
-                  fillColor: const Color(0xFF222222),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: BorderSide.none,
-                  ),
+                  fillColor: const Color.fromARGB(255, 36, 36, 36),
+                 
                 ),
               ),
               const SizedBox(height: 40),
@@ -99,9 +103,7 @@ class _LoginPageState extends State<LoginPage> {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.grey[800],
                     foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
+                    
                   ),
                   onPressed: () {
                     Navigator.pushReplacement(
